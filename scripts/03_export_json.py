@@ -15,7 +15,7 @@ os.makedirs(OUT, exist_ok=True)
 conn = sqlite3.connect(DB_PATH)
 
 # ============================================================
-# 1. MODELES — métriques complètes
+# 1. MODELES — métriques complètes + tarifs
 # ============================================================
 print("Export modeles.json...")
 df = pd.read_sql_query("""
@@ -35,11 +35,14 @@ df = pd.read_sql_query("""
         q.qlt_taux_satisfaction,
         q.qlt_taux_incorrect,
         q.qlt_taux_superficial,
-        q.qlt_taux_victoire
+        q.qlt_taux_victoire,
+        t.trf_input_1k,
+        t.trf_output_1k
     FROM Modele m
     LEFT JOIN Fournisseur f ON m.frs_id = f.frs_id
     LEFT JOIN Metrique_Energie e ON m.mdl_id = e.mdl_id
     LEFT JOIN Metrique_Qualite q ON m.mdl_id = q.mdl_id
+    LEFT JOIN Tarif t ON m.mdl_id = t.mdl_id
     ORDER BY e.nrg_kwh_moyen ASC
 """, conn)
 df.to_json(f"{OUT}/modeles.json", orient='records', force_ascii=False, indent=2)
@@ -133,11 +136,13 @@ stats = pd.read_sql_query("""
         COUNT(DISTINCT f.frs_id) AS nb_fournisseurs,
         SUM(e.nrg_nb_conversations) AS nb_conversations_total,
         ROUND(AVG(e.nrg_kwh_moyen), 6) AS kwh_moyen_global,
-        ROUND(AVG(q.qlt_taux_satisfaction), 3) AS satisfaction_moyenne
+        ROUND(AVG(q.qlt_taux_satisfaction), 3) AS satisfaction_moyenne,
+        COUNT(DISTINCT t.mdl_id) AS nb_modeles_avec_tarif
     FROM Modele m
     LEFT JOIN Fournisseur f ON m.frs_id = f.frs_id
     LEFT JOIN Metrique_Energie e ON m.mdl_id = e.mdl_id
     LEFT JOIN Metrique_Qualite q ON m.mdl_id = q.mdl_id
+    LEFT JOIN Tarif t ON m.mdl_id = t.mdl_id
 """, conn)
 print(stats.to_string(index=False))
 
