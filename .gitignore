@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Données brutes volumineuses
+*.parquet
+data/raw/Base_Carbone_V23.6.csv
+
+# Environnement Jupyter
+.ipynb_checkpoints/
