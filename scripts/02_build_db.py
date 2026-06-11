@@ -96,8 +96,30 @@ cursor.executescript("""
         FOREIGN KEY (frs_id) REFERENCES Fournisseur(frs_id),
         FOREIGN KEY (find_id) REFERENCES FMTI_Indicateur(find_id)
     );
+
+    -- --------------------------------------------------------
+    -- TABLE LOUIS — Benchmark énergétique en laboratoire
+    -- Source : ML.ENERGY Benchmark V3 (NeurIPS 2025)
+    --          ml-energy/benchmark-v3 sur HuggingFace
+    -- Remplie par : scripts/05_add_benchmark.py
+    -- --------------------------------------------------------
+    CREATE TABLE Benchmark_Tache (
+        btk_id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+        mdl_id                  INTEGER,
+        btk_tache               TEXT,       -- ex: 'gpqa', 'lm-arena-chat', 'coding'
+        btk_gpu_modele          TEXT,       -- 'H100' ou 'B200'
+        btk_nb_gpu              INTEGER,
+        btk_joules_par_token    REAL,       -- énergie mesurée en labo (J/token)
+        btk_kwh_par_1k_tokens   REAL,       -- converti pour comparaison avec Compar:IA
+        btk_watt_moyen          REAL,       -- puissance moyenne GPU (W)
+        btk_debit_tokens_s      REAL,       -- débit (tokens/s)
+        btk_latence_itl_ms      REAL,       -- latence inter-token (ms)
+        btk_model_id_hf         TEXT,       -- identifiant HuggingFace original
+        btk_source              TEXT DEFAULT 'mlenergy-v3',
+        FOREIGN KEY (mdl_id) REFERENCES Modele(mdl_id)
+    );
 """)
-print("  → Tables créées")
+print("  → Tables créées (dont Benchmark_Tache)")
 
 # ============================================================
 # CHARGEMENT DES DONNÉES
@@ -277,11 +299,13 @@ print("\nVérification BDD :")
 tables = [
     'Fournisseur', 'Modele', 'Metrique_Energie',
     'Metrique_Qualite', 'Metrique_Categorie',
-    'Facteur_Emission', 'FMTI_Indicateur', 'FMTI_Score'
+    'Facteur_Emission', 'FMTI_Indicateur', 'FMTI_Score',
+    'Benchmark_Tache'
 ]
 for table in tables:
     count = cursor.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
-    print(f"  {table} : {count} lignes")
+    note = " (à remplir via 05_add_benchmark.py)" if table == "Benchmark_Tache" and count == 0 else ""
+    print(f"  {table} : {count} lignes{note}")
 
 taille = os.path.getsize(DB_PATH) / 1024
 print(f"\nBDD créée : {DB_PATH} ({taille:.0f} Ko)")

@@ -27,27 +27,27 @@
     "score_upstream":18,
     "score_model":21,
     "score_downstream":27,
-    "kwh_moyen_fournisseur":null
+    "kwh_moyen_fournisseur":0.002976
   },
   {
     "frs_nom":"Anthropic",
     "frs_pays_datacenter":"États-Unis",
     "frs_co2_datacenter":0.522,
     "frs_score_fmti":46.0,
-    "score_upstream":6,
-    "score_model":34,
-    "score_downstream":52,
-    "kwh_moyen_fournisseur":0.006929
+    "score_upstream":15,
+    "score_model":85,
+    "score_downstream":130,
+    "kwh_moyen_fournisseur":0.005503
   },
   {
     "frs_nom":"Google",
     "frs_pays_datacenter":"États-Unis",
     "frs_co2_datacenter":0.522,
     "frs_score_fmti":41.0,
-    "score_upstream":72,
-    "score_model":117,
-    "score_downstream":180,
-    "kwh_moyen_fournisseur":0.0016301111
+    "score_upstream":120,
+    "score_model":195,
+    "score_downstream":300,
+    "kwh_moyen_fournisseur":0.0029501333
   },
   {
     "frs_nom":"Amazon",
@@ -57,47 +57,47 @@
     "score_upstream":6,
     "score_model":15,
     "score_downstream":18,
-    "kwh_moyen_fournisseur":null
+    "kwh_moyen_fournisseur":0.000877
   },
   {
     "frs_nom":"OpenAI",
     "frs_pays_datacenter":"États-Unis",
     "frs_co2_datacenter":0.522,
     "frs_score_fmti":35.0,
-    "score_upstream":6,
-    "score_model":78,
-    "score_downstream":126,
-    "kwh_moyen_fournisseur":0.0012285
+    "score_upstream":17,
+    "score_model":221,
+    "score_downstream":357,
+    "kwh_moyen_fournisseur":0.0012416471
   },
   {
     "frs_nom":"DeepSeek",
     "frs_pays_datacenter":"Chine",
     "frs_co2_datacenter":0.766,
     "frs_score_fmti":32.0,
-    "score_upstream":22,
-    "score_model":28,
-    "score_downstream":14,
-    "kwh_moyen_fournisseur":0.005224
+    "score_upstream":77,
+    "score_model":98,
+    "score_downstream":49,
+    "kwh_moyen_fournisseur":0.0047158571
   },
   {
     "frs_nom":"Meta",
     "frs_pays_datacenter":"États-Unis",
     "frs_co2_datacenter":0.522,
     "frs_score_fmti":31.0,
-    "score_upstream":21,
-    "score_model":36,
-    "score_downstream":36,
-    "kwh_moyen_fournisseur":0.0004893333
+    "score_upstream":49,
+    "score_model":84,
+    "score_downstream":84,
+    "kwh_moyen_fournisseur":0.0018082857
   },
   {
     "frs_nom":"Alibaba",
     "frs_pays_datacenter":"Chine",
     "frs_co2_datacenter":0.766,
     "frs_score_fmti":26.0,
-    "score_upstream":30,
-    "score_model":60,
-    "score_downstream":40,
-    "kwh_moyen_fournisseur":0.0074304
+    "score_upstream":84,
+    "score_model":168,
+    "score_downstream":112,
+    "kwh_moyen_fournisseur":0.0041418462
   },
   {
     "frs_nom":"Mistral",
@@ -105,19 +105,19 @@
     "frs_co2_datacenter":0.0791,
     "frs_score_fmti":18.0,
     "score_upstream":0,
-    "score_model":30,
-    "score_downstream":60,
-    "kwh_moyen_fournisseur":0.0021674
+    "score_model":96,
+    "score_downstream":192,
+    "kwh_moyen_fournisseur":0.0010272143
   },
   {
     "frs_nom":"xAI",
     "frs_pays_datacenter":"États-Unis",
     "frs_co2_datacenter":0.522,
     "frs_score_fmti":14.0,
-    "score_upstream":2,
-    "score_model":10,
-    "score_downstream":16,
-    "kwh_moyen_fournisseur":0.068359
+    "score_upstream":4,
+    "score_model":20,
+    "score_downstream":32,
+    "kwh_moyen_fournisseur":0.046102
   },
   {
     "frs_nom":"Midjourney",
@@ -137,7 +137,7 @@
     "score_upstream":0,
     "score_model":0,
     "score_downstream":0,
-    "kwh_moyen_fournisseur":null
+    "kwh_moyen_fournisseur":0.000077
   },
   {
     "frs_nom":"Cohere",
@@ -147,7 +147,7 @@
     "score_upstream":0,
     "score_model":0,
     "score_downstream":0,
-    "kwh_moyen_fournisseur":null
+    "kwh_moyen_fournisseur":0.000086
   },
   {
     "frs_nom":"Nvidia",
@@ -157,6 +157,6 @@
     "score_upstream":0,
     "score_model":0,
     "score_downstream":0,
-    "kwh_moyen_fournisseur":0.000209
+    "kwh_moyen_fournisseur":0.001037
   }
 ]
