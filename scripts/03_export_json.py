@@ -151,35 +151,29 @@ df_btk = pd.read_sql_query("""
 """, conn)
 
 if len(df_btk) == 0:
-    print("  ⚠️  Table vide — lancer d'abord : python scripts/05_add_benchmark.py")
+    print("  Table vide — lancer d'abord : python scripts/05_add_benchmark.py")
 else:
     df_btk.to_json(f"{OUT}/benchmark_taches.json", orient='records',
                    force_ascii=False, indent=2)
-    print(f"  → {len(df_btk)} entrées ({df_btk['mdl_nom'].nunique()} modèles, "
-          f"{df_btk['btk_tache'].nunique()} tâches)")
+    print(f"  → {len(df_btk)} entrees ({df_btk['mdl_nom'].nunique()} modeles, "
+          f"{df_btk['btk_tache'].nunique()} taches)")
 
 # ============================================================
 # 7. DETECTEUR DE GASPILLAGE
-#    Croisement benchmark labo (ML.ENERGY) × usage réel (Compar:IA)
-#    Objectif : ratio consommation réelle / consommation théorique
 # ============================================================
 print("Export detecteur_gaspillage.json...")
 df_gaspillage = pd.read_sql_query("""
     SELECT
         m.mdl_nom,
         f.frs_nom,
-        -- Consommation réelle (Compar:IA) — Wh par token → kWh par 1000 tokens
         e.nrg_wh_par_token,
         (e.nrg_wh_par_token / 1000.0) * 1000 AS nrg_kwh_par_1k_tokens_reel,
         e.nrg_kwh_moyen,
         e.nrg_nb_conversations,
-        -- Benchmark labo (ML.ENERGY) — meilleure mesure disponible (H100, tâche chat)
-        -- On prend la médiane toutes tâches confondues pour la comparaison globale
-        AVG(bt.btk_kwh_par_1k_tokens)          AS btk_kwh_par_1k_tokens_labo,
-        AVG(bt.btk_joules_par_token)            AS btk_joules_par_token_labo,
-        AVG(bt.btk_watt_moyen)                  AS btk_watt_moyen,
-        COUNT(bt.btk_id)                        AS btk_nb_mesures,
-        -- Ratio : > 1 = le modèle consomme plus en prod qu'en labo
+        AVG(bt.btk_kwh_par_1k_tokens) AS btk_kwh_par_1k_tokens_labo,
+        AVG(bt.btk_joules_par_token)  AS btk_joules_par_token_labo,
+        AVG(bt.btk_watt_moyen)        AS btk_watt_moyen,
+        COUNT(bt.btk_id)              AS btk_nb_mesures,
         CASE
             WHEN AVG(bt.btk_kwh_par_1k_tokens) > 0
              AND e.nrg_wh_par_token IS NOT NULL
@@ -189,9 +183,7 @@ df_gaspillage = pd.read_sql_query("""
             )
             ELSE NULL
         END AS ratio_reel_sur_labo,
-        -- Score de frugalité : 0 (très gourmand) à 1 (très efficace)
-        -- Basé sur le ratio inversé, normalisé entre les modèles disponibles
-        NULL AS score_frugalite  -- calculé en post-processing Python ci-dessous
+        NULL AS score_frugalite
     FROM Modele m
     LEFT JOIN Fournisseur f ON m.frs_id = f.frs_id
     LEFT JOIN Metrique_Energie e ON m.mdl_id = e.mdl_id
@@ -203,11 +195,8 @@ df_gaspillage = pd.read_sql_query("""
 """, conn)
 
 if len(df_gaspillage) == 0:
-    print("  ⚠️  Aucun modèle en commun entre Compar:IA et ML.ENERGY.")
-    print("       Vérifier que 05_add_benchmark.py a bien été lancé.")
+    print("  Aucun modele en commun entre Compar:IA et ML.ENERGY.")
 else:
-    # Calcul du score de frugalité normalisé entre 0 et 1
-    # 1 = le moins gourmand, 0 = le plus gourmand
     df_valid = df_gaspillage[df_gaspillage['ratio_reel_sur_labo'].notna()].copy()
     if len(df_valid) > 1:
         r_min = df_valid['ratio_reel_sur_labo'].min()
@@ -219,17 +208,67 @@ else:
 
     df_gaspillage.to_json(f"{OUT}/detecteur_gaspillage.json", orient='records',
                           force_ascii=False, indent=2)
-    print(f"  → {len(df_gaspillage)} modèles comparés")
+    print(f"  → {len(df_gaspillage)} modeles compares")
 
-    # Aperçu du top/bottom
-    df_show = df_gaspillage[df_gaspillage['ratio_reel_sur_labo'].notna()].copy()
-    if len(df_show) > 0:
-        print(f"\n  Modèles les plus frugaux (ratio réel/labo le plus bas) :")
-        for _, r in df_show.head(3).iterrows():
-            print(f"    {r['mdl_nom']:<40} ratio={r['ratio_reel_sur_labo']}")
-        print(f"  Modèles les plus énergivores :")
-        for _, r in df_show.tail(3).iterrows():
-            print(f"    {r['mdl_nom']:<40} ratio={r['ratio_reel_sur_labo']}")
+# ============================================================
+# 7bis. MODELES NORMALISÉS — pour le score d'efficience front
+# ============================================================
+print("Export modeles_normalises.json...")
+df_norm = pd.read_sql_query("""
+    SELECT
+        m.mdl_nom,
+        f.frs_nom,
+        f.frs_pays_datacenter,
+        f.frs_co2_datacenter,
+        f.frs_score_fmti,
+        e.nrg_nb_conversations,
+        e.nrg_kwh_moyen,
+        e.nrg_wh_par_token,
+        q.qlt_taux_satisfaction,
+        q.qlt_taux_victoire,
+        t.trf_input_1k,
+        t.trf_output_1k
+    FROM Modele m
+    LEFT JOIN Fournisseur f ON m.frs_id = f.frs_id
+    LEFT JOIN Metrique_Energie e ON m.mdl_id = e.mdl_id
+    LEFT JOIN Metrique_Qualite q ON m.mdl_id = q.mdl_id
+    LEFT JOIN Tarif t ON m.mdl_id = t.mdl_id
+    WHERE e.nrg_kwh_moyen IS NOT NULL
+""", conn)
+
+kwh_min = df_norm['nrg_kwh_moyen'].min()
+kwh_max = df_norm['nrg_kwh_moyen'].max()
+prix_min = df_norm['trf_input_1k'].min()
+prix_max = df_norm['trf_input_1k'].max()
+fmti_min = df_norm['frs_score_fmti'].min()
+fmti_max = df_norm['frs_score_fmti'].max()
+
+df_norm['score_eco'] = (
+    1 - (df_norm['nrg_kwh_moyen'] - kwh_min) / (kwh_max - kwh_min)
+).round(4)
+
+df_norm['score_perf'] = df_norm['qlt_taux_satisfaction'].round(4)
+
+df_norm['score_prix'] = df_norm['trf_input_1k'].apply(
+    lambda x: round(1 - (x - prix_min) / (prix_max - prix_min), 4)
+    if pd.notna(x) and prix_max > prix_min else 0.5
+)
+
+df_norm['score_transparence'] = df_norm['frs_score_fmti'].apply(
+    lambda x: round((x - fmti_min) / (fmti_max - fmti_min), 4)
+    if pd.notna(x) and fmti_max > fmti_min else 0.5
+)
+
+df_norm['score_efficience'] = (
+    df_norm['score_eco'] * 0.4 +
+    df_norm['score_perf'] * 0.3 +
+    df_norm['score_prix'] * 0.2 +
+    df_norm['score_transparence'] * 0.1
+).round(4)
+
+df_norm = df_norm.sort_values('score_efficience', ascending=False)
+df_norm.to_json(f"{OUT}/modeles_normalises.json", orient='records', force_ascii=False, indent=2)
+print(f"  → {len(df_norm)} modeles normalises")
 
 # ============================================================
 # 8. STATS GLOBALES
@@ -253,11 +292,11 @@ stats = pd.read_sql_query("""
 """, conn)
 print(stats.to_string(index=False))
 
-print("\nFichiers exportés :")
+print("\nFichiers exportes :")
 for fname in sorted(os.listdir(OUT)):
     if fname != '.gitkeep':
         size = os.path.getsize(f"{OUT}/{fname}") / 1024
         print(f"  {fname} — {size:.0f} Ko")
 
 conn.close()
-print("\nTerminé.")
+print("\nTermine.")
