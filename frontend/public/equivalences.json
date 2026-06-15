@@ -1,0 +1,1808 @@
+{
+  "meta": {
+    "nb_modeles": 112,
+    "kwh_moyen_global": 0.0042657,
+    "co2_moyen_global_g": 2.23866,
+    "sources_constantes": {
+      "led_9w": "ADEME — 1 kWh = 6667 min ampoule LED 9W",
+      "voiture_electrique": "ADEME — conso moyenne VE 0.2 kWh/km",
+      "batterie_smartphone": "Batterie moyenne 15 Wh",
+      "streaming_hd": "IEA — streaming HD 0.036 kWh/h",
+      "recherche_google": "Google — 0.3 Wh par recherche"
+    }
+  },
+  "modeles": [
+    {
+      "mdl_nom": "chocolatine-2-14b-instruct-v2.0.3-q8",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 3.1e-05,
+      "co2_g_par_requete": 0.011067,
+      "wh_par_token": 8.794e-05,
+      "nb_conversations": 3219,
+      "equivalences": {
+        "min_led_9w": 0.2067,
+        "km_voiture_electrique": 0.000155,
+        "pct_batterie_smartphone": 0.2068,
+        "min_streaming_hd": 0.0517,
+        "equiv_recherches_google": 0.1
+      }
+    },
+    {
+      "mdl_nom": "chocolatine-14b-instruct-dpo-v1.2-q4",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 4.1e-05,
+      "co2_g_par_requete": 0.014637,
+      "wh_par_token": 9.643e-05,
+      "nb_conversations": 627,
+      "equivalences": {
+        "min_led_9w": 0.2733,
+        "km_voiture_electrique": 0.000205,
+        "pct_batterie_smartphone": 0.2735,
+        "min_streaming_hd": 0.0683,
+        "equiv_recherches_google": 0.14
+      }
+    },
+    {
+      "mdl_nom": "qwen2-7b-instruct",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 4.6e-05,
+      "co2_g_par_requete": 0.035236,
+      "wh_par_token": 8.794e-05,
+      "nb_conversations": 155,
+      "equivalences": {
+        "min_led_9w": 0.3067,
+        "km_voiture_electrique": 0.00023,
+        "pct_batterie_smartphone": 0.3068,
+        "min_streaming_hd": 0.0767,
+        "equiv_recherches_google": 0.15
+      }
+    },
+    {
+      "mdl_nom": "Apertus-8B-Instruct-2509",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 4.9e-05,
+      "co2_g_par_requete": 0.003876,
+      "wh_par_token": 8.915e-05,
+      "nb_conversations": 155,
+      "equivalences": {
+        "min_led_9w": 0.3267,
+        "km_voiture_electrique": 0.000245,
+        "pct_batterie_smartphone": 0.3268,
+        "min_streaming_hd": 0.0817,
+        "equiv_recherches_google": 0.16
+      }
+    },
+    {
+      "mdl_nom": "mistral-nemo-2407",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 5.3e-05,
+      "co2_g_par_requete": 0.004192,
+      "wh_par_token": 9.401e-05,
+      "nb_conversations": 11839,
+      "equivalences": {
+        "min_led_9w": 0.3534,
+        "km_voiture_electrique": 0.000265,
+        "pct_batterie_smartphone": 0.3535,
+        "min_streaming_hd": 0.0884,
+        "equiv_recherches_google": 0.18
+      }
+    },
+    {
+      "mdl_nom": "gemma-2-9b-it",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 5.7e-05,
+      "co2_g_par_requete": 0.029754,
+      "wh_par_token": 9.037e-05,
+      "nb_conversations": 9772,
+      "equivalences": {
+        "min_led_9w": 0.38,
+        "km_voiture_electrique": 0.000285,
+        "pct_batterie_smartphone": 0.3802,
+        "min_streaming_hd": 0.095,
+        "equiv_recherches_google": 0.19
+      }
+    },
+    {
+      "mdl_nom": "lfm2-8b-a1b",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 6e-05,
+      "co2_g_par_requete": 0.02142,
+      "wh_par_token": 8.066e-05,
+      "nb_conversations": 4370,
+      "equivalences": {
+        "min_led_9w": 0.4,
+        "km_voiture_electrique": 0.0003,
+        "pct_batterie_smartphone": 0.4002,
+        "min_streaming_hd": 0.1,
+        "equiv_recherches_google": 0.2
+      }
+    },
+    {
+      "mdl_nom": "Yi-1.5-9B-Chat",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 6.2e-05,
+      "co2_g_par_requete": 0.022134,
+      "wh_par_token": 9.037e-05,
+      "nb_conversations": 129,
+      "equivalences": {
+        "min_led_9w": 0.4134,
+        "km_voiture_electrique": 0.00031,
+        "pct_batterie_smartphone": 0.4135,
+        "min_streaming_hd": 0.1034,
+        "equiv_recherches_google": 0.21
+      }
+    },
+    {
+      "mdl_nom": "qwen2.5-32b-instruct",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 6.4e-05,
+      "co2_g_par_requete": 0.049024,
+      "wh_par_token": 0.00011827,
+      "nb_conversations": 363,
+      "equivalences": {
+        "min_led_9w": 0.4267,
+        "km_voiture_electrique": 0.00032,
+        "pct_batterie_smartphone": 0.4269,
+        "min_streaming_hd": 0.1067,
+        "equiv_recherches_google": 0.21
+      }
+    },
+    {
+      "mdl_nom": "llama-3.1-8b",
+      "frs_nom": "Meta",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 6.7e-05,
+      "co2_g_par_requete": 0.034974,
+      "wh_par_token": 8.915e-05,
+      "nb_conversations": 19223,
+      "equivalences": {
+        "min_led_9w": 0.4467,
+        "km_voiture_electrique": 0.000335,
+        "pct_batterie_smartphone": 0.4469,
+        "min_streaming_hd": 0.1117,
+        "equiv_recherches_google": 0.22
+      }
+    },
+    {
+      "mdl_nom": "gemma-2-27b-it-q8",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 7e-05,
+      "co2_g_par_requete": 0.03654,
+      "wh_par_token": 0.00011221,
+      "nb_conversations": 1718,
+      "equivalences": {
+        "min_led_9w": 0.4667,
+        "km_voiture_electrique": 0.00035,
+        "pct_batterie_smartphone": 0.4669,
+        "min_streaming_hd": 0.1167,
+        "equiv_recherches_google": 0.23
+      }
+    },
+    {
+      "mdl_nom": "phi-3.5-mini-instruct",
+      "frs_nom": "Microsoft",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 7.2e-05,
+      "co2_g_par_requete": 0.037584,
+      "wh_par_token": 8.309e-05,
+      "nb_conversations": 5419,
+      "equivalences": {
+        "min_led_9w": 0.48,
+        "km_voiture_electrique": 0.00036,
+        "pct_batterie_smartphone": 0.4802,
+        "min_streaming_hd": 0.12,
+        "equiv_recherches_google": 0.24
+      }
+    },
+    {
+      "mdl_nom": "EuroLLM-22B-Instruct-2512",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 7.4e-05,
+      "co2_g_par_requete": 0.026418,
+      "wh_par_token": 0.00010614,
+      "nb_conversations": 3457,
+      "equivalences": {
+        "min_led_9w": 0.4934,
+        "km_voiture_electrique": 0.00037,
+        "pct_batterie_smartphone": 0.4936,
+        "min_streaming_hd": 0.1234,
+        "equiv_recherches_google": 0.25
+      }
+    },
+    {
+      "mdl_nom": "aya-expanse-8b",
+      "frs_nom": "Cohere",
+      "pays_datacenter": "Canada",
+      "kwh_par_requete": 7.7e-05,
+      "co2_g_par_requete": 0.014322,
+      "wh_par_token": 8.915e-05,
+      "nb_conversations": 2209,
+      "equivalences": {
+        "min_led_9w": 0.5134,
+        "km_voiture_electrique": 0.000385,
+        "pct_batterie_smartphone": 0.5136,
+        "min_streaming_hd": 0.1284,
+        "equiv_recherches_google": 0.26
+      }
+    },
+    {
+      "mdl_nom": "gpt-4.1-nano",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 7.7e-05,
+      "co2_g_par_requete": 0.040194,
+      "wh_par_token": 0.00010735,
+      "nb_conversations": 13214,
+      "equivalences": {
+        "min_led_9w": 0.5134,
+        "km_voiture_electrique": 0.000385,
+        "pct_batterie_smartphone": 0.5136,
+        "min_streaming_hd": 0.1284,
+        "equiv_recherches_google": 0.26
+      }
+    },
+    {
+      "mdl_nom": "qwen2.5-7b-instruct",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 7.8e-05,
+      "co2_g_par_requete": 0.059748,
+      "wh_par_token": 8.794e-05,
+      "nb_conversations": 3035,
+      "equivalences": {
+        "min_led_9w": 0.52,
+        "km_voiture_electrique": 0.00039,
+        "pct_batterie_smartphone": 0.5203,
+        "min_streaming_hd": 0.13,
+        "equiv_recherches_google": 0.26
+      }
+    },
+    {
+      "mdl_nom": "phi-4",
+      "frs_nom": "Microsoft",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 8.2e-05,
+      "co2_g_par_requete": 0.042804,
+      "wh_par_token": 9.643e-05,
+      "nb_conversations": 18918,
+      "equivalences": {
+        "min_led_9w": 0.5467,
+        "km_voiture_electrique": 0.00041,
+        "pct_batterie_smartphone": 0.5469,
+        "min_streaming_hd": 0.1367,
+        "equiv_recherches_google": 0.27
+      }
+    },
+    {
+      "mdl_nom": "gpt-5.4-nano",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 8.6e-05,
+      "co2_g_par_requete": 0.044892,
+      "wh_par_token": 8.43e-05,
+      "nb_conversations": 2314,
+      "equivalences": {
+        "min_led_9w": 0.5734,
+        "km_voiture_electrique": 0.00043,
+        "pct_batterie_smartphone": 0.5736,
+        "min_streaming_hd": 0.1434,
+        "equiv_recherches_google": 0.29
+      }
+    },
+    {
+      "mdl_nom": "lfm2-24b-a2b",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 8.6e-05,
+      "co2_g_par_requete": 0.030702,
+      "wh_par_token": 8.187e-05,
+      "nb_conversations": 1020,
+      "equivalences": {
+        "min_led_9w": 0.5734,
+        "km_voiture_electrique": 0.00043,
+        "pct_batterie_smartphone": 0.5736,
+        "min_streaming_hd": 0.1434,
+        "equiv_recherches_google": 0.29
+      }
+    },
+    {
+      "mdl_nom": "gpt-4o-mini-2024-07-18",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 8.8e-05,
+      "co2_g_par_requete": 0.045936,
+      "wh_par_token": 0.00010129,
+      "nb_conversations": 14663,
+      "equivalences": {
+        "min_led_9w": 0.5867,
+        "km_voiture_electrique": 0.00044,
+        "pct_batterie_smartphone": 0.587,
+        "min_streaming_hd": 0.1467,
+        "equiv_recherches_google": 0.29
+      }
+    },
+    {
+      "mdl_nom": "magistral-small-2506",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 9.1e-05,
+      "co2_g_par_requete": 0.007198,
+      "wh_par_token": 0.00010857,
+      "nb_conversations": 5004,
+      "equivalences": {
+        "min_led_9w": 0.6067,
+        "km_voiture_electrique": 0.000455,
+        "pct_batterie_smartphone": 0.607,
+        "min_streaming_hd": 0.1517,
+        "equiv_recherches_google": 0.3
+      }
+    },
+    {
+      "mdl_nom": "gemma-4-26b-a4b-it",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 9.2e-05,
+      "co2_g_par_requete": 0.048024,
+      "wh_par_token": 8.43e-05,
+      "nb_conversations": 1545,
+      "equivalences": {
+        "min_led_9w": 0.6134,
+        "km_voiture_electrique": 0.00046,
+        "pct_batterie_smartphone": 0.6136,
+        "min_streaming_hd": 0.1534,
+        "equiv_recherches_google": 0.31
+      }
+    },
+    {
+      "mdl_nom": "mistral-small-2506",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 9.3e-05,
+      "co2_g_par_requete": 0.007356,
+      "wh_par_token": 0.00010857,
+      "nb_conversations": 11712,
+      "equivalences": {
+        "min_led_9w": 0.62,
+        "km_voiture_electrique": 0.000465,
+        "pct_batterie_smartphone": 0.6203,
+        "min_streaming_hd": 0.155,
+        "equiv_recherches_google": 0.31
+      }
+    },
+    {
+      "mdl_nom": "aya-expanse-32b",
+      "frs_nom": "Cohere",
+      "pays_datacenter": "Canada",
+      "kwh_par_requete": 9.5e-05,
+      "co2_g_par_requete": 0.01767,
+      "wh_par_token": 0.00011827,
+      "nb_conversations": 10521,
+      "equivalences": {
+        "min_led_9w": 0.6334,
+        "km_voiture_electrique": 0.000475,
+        "pct_batterie_smartphone": 0.6336,
+        "min_streaming_hd": 0.1584,
+        "equiv_recherches_google": 0.32
+      }
+    },
+    {
+      "mdl_nom": "gemma-3n-e4b-it",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 9.7e-05,
+      "co2_g_par_requete": 0.050634,
+      "wh_par_token": 8.43e-05,
+      "nb_conversations": 10078,
+      "equivalences": {
+        "min_led_9w": 0.6467,
+        "km_voiture_electrique": 0.000485,
+        "pct_batterie_smartphone": 0.647,
+        "min_streaming_hd": 0.1617,
+        "equiv_recherches_google": 0.32
+      }
+    },
+    {
+      "mdl_nom": "mistral-small-24b-instruct-2501",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 9.9e-05,
+      "co2_g_par_requete": 0.007831,
+      "wh_par_token": 0.00010857,
+      "nb_conversations": 5831,
+      "equivalences": {
+        "min_led_9w": 0.66,
+        "km_voiture_electrique": 0.000495,
+        "pct_batterie_smartphone": 0.6603,
+        "min_streaming_hd": 0.165,
+        "equiv_recherches_google": 0.33
+      }
+    },
+    {
+      "mdl_nom": "mistral-small-3.1-24b",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 0.0001,
+      "co2_g_par_requete": 0.00791,
+      "wh_par_token": 0.00010857,
+      "nb_conversations": 10949,
+      "equivalences": {
+        "min_led_9w": 0.6667,
+        "km_voiture_electrique": 0.0005,
+        "pct_batterie_smartphone": 0.667,
+        "min_streaming_hd": 0.1667,
+        "equiv_recherches_google": 0.33
+      }
+    },
+    {
+      "mdl_nom": "mistral-saba",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 0.000102,
+      "co2_g_par_requete": 0.008068,
+      "wh_par_token": 0.00010857,
+      "nb_conversations": 10228,
+      "equivalences": {
+        "min_led_9w": 0.68,
+        "km_voiture_electrique": 0.00051,
+        "pct_batterie_smartphone": 0.6803,
+        "min_streaming_hd": 0.17,
+        "equiv_recherches_google": 0.34
+      }
+    },
+    {
+      "mdl_nom": "gemma-3-4b",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000104,
+      "co2_g_par_requete": 0.054288,
+      "wh_par_token": 8.43e-05,
+      "nb_conversations": 20097,
+      "equivalences": {
+        "min_led_9w": 0.6934,
+        "km_voiture_electrique": 0.00052,
+        "pct_batterie_smartphone": 0.6937,
+        "min_streaming_hd": 0.1734,
+        "equiv_recherches_google": 0.35
+      }
+    },
+    {
+      "mdl_nom": "gpt-5-nano",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000105,
+      "co2_g_par_requete": 0.05481,
+      "wh_par_token": 8.43e-05,
+      "nb_conversations": 3672,
+      "equivalences": {
+        "min_led_9w": 0.7,
+        "km_voiture_electrique": 0.000525,
+        "pct_batterie_smartphone": 0.7003,
+        "min_streaming_hd": 0.175,
+        "equiv_recherches_google": 0.35
+      }
+    },
+    {
+      "mdl_nom": "o3-mini",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000107,
+      "co2_g_par_requete": 0.055854,
+      "wh_par_token": 0.00010129,
+      "nb_conversations": 3304,
+      "equivalences": {
+        "min_led_9w": 0.7134,
+        "km_voiture_electrique": 0.000535,
+        "pct_batterie_smartphone": 0.7137,
+        "min_streaming_hd": 0.1784,
+        "equiv_recherches_google": 0.36
+      }
+    },
+    {
+      "mdl_nom": "lfm-40b",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.000112,
+      "co2_g_par_requete": 0.039984,
+      "wh_par_token": 0.00018801,
+      "nb_conversations": 6748,
+      "equivalences": {
+        "min_led_9w": 0.7467,
+        "km_voiture_electrique": 0.00056,
+        "pct_batterie_smartphone": 0.747,
+        "min_streaming_hd": 0.1867,
+        "equiv_recherches_google": 0.37
+      }
+    },
+    {
+      "mdl_nom": "gemma-4-31b-it",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000113,
+      "co2_g_par_requete": 0.058986,
+      "wh_par_token": 0.00011706,
+      "nb_conversations": 1626,
+      "equivalences": {
+        "min_led_9w": 0.7534,
+        "km_voiture_electrique": 0.000565,
+        "pct_batterie_smartphone": 0.7537,
+        "min_streaming_hd": 0.1884,
+        "equiv_recherches_google": 0.38
+      }
+    },
+    {
+      "mdl_nom": "o4-mini",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000114,
+      "co2_g_par_requete": 0.059508,
+      "wh_par_token": 0.00010129,
+      "nb_conversations": 6486,
+      "equivalences": {
+        "min_led_9w": 0.76,
+        "km_voiture_electrique": 0.00057,
+        "pct_batterie_smartphone": 0.7604,
+        "min_streaming_hd": 0.19,
+        "equiv_recherches_google": 0.38
+      }
+    },
+    {
+      "mdl_nom": "gemma-3-12b",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000122,
+      "co2_g_par_requete": 0.063684,
+      "wh_par_token": 9.401e-05,
+      "nb_conversations": 18544,
+      "equivalences": {
+        "min_led_9w": 0.8134,
+        "km_voiture_electrique": 0.00061,
+        "pct_batterie_smartphone": 0.8137,
+        "min_streaming_hd": 0.2034,
+        "equiv_recherches_google": 0.41
+      }
+    },
+    {
+      "mdl_nom": "mixtral-8x7b-instruct-v0.1",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 0.000124,
+      "co2_g_par_requete": 0.009808,
+      "wh_par_token": 0.00019287,
+      "nb_conversations": 5216,
+      "equivalences": {
+        "min_led_9w": 0.8267,
+        "km_voiture_electrique": 0.00062,
+        "pct_batterie_smartphone": 0.8271,
+        "min_streaming_hd": 0.2067,
+        "equiv_recherches_google": 0.41
+      }
+    },
+    {
+      "mdl_nom": "qwen3-30b-a3b",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.000131,
+      "co2_g_par_requete": 0.100346,
+      "wh_par_token": 8.309e-05,
+      "nb_conversations": 2047,
+      "equivalences": {
+        "min_led_9w": 0.8734,
+        "km_voiture_electrique": 0.000655,
+        "pct_batterie_smartphone": 0.8738,
+        "min_streaming_hd": 0.2184,
+        "equiv_recherches_google": 0.44
+      }
+    },
+    {
+      "mdl_nom": "gpt-oss-20b",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000132,
+      "co2_g_par_requete": 0.068904,
+      "wh_par_token": 8.309e-05,
+      "nb_conversations": 7584,
+      "equivalences": {
+        "min_led_9w": 0.88,
+        "km_voiture_electrique": 0.00066,
+        "pct_batterie_smartphone": 0.8804,
+        "min_streaming_hd": 0.22,
+        "equiv_recherches_google": 0.44
+      }
+    },
+    {
+      "mdl_nom": "gemma-3-27b",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.00015,
+      "co2_g_par_requete": 0.0783,
+      "wh_par_token": 0.00011221,
+      "nb_conversations": 19074,
+      "equivalences": {
+        "min_led_9w": 1.0001,
+        "km_voiture_electrique": 0.00075,
+        "pct_batterie_smartphone": 1.0005,
+        "min_streaming_hd": 0.2501,
+        "equiv_recherches_google": 0.5
+      }
+    },
+    {
+      "mdl_nom": "qwq-32b",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.000156,
+      "co2_g_par_requete": 0.119496,
+      "wh_par_token": 0.00011827,
+      "nb_conversations": 2938,
+      "equivalences": {
+        "min_led_9w": 1.0401,
+        "km_voiture_electrique": 0.00078,
+        "pct_batterie_smartphone": 1.0405,
+        "min_streaming_hd": 0.2601,
+        "equiv_recherches_google": 0.52
+      }
+    },
+    {
+      "mdl_nom": "gpt-5.4-mini",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000178,
+      "co2_g_par_requete": 0.092916,
+      "wh_par_token": 0.00019772,
+      "nb_conversations": 2533,
+      "equivalences": {
+        "min_led_9w": 1.1867,
+        "km_voiture_electrique": 0.00089,
+        "pct_batterie_smartphone": 1.1873,
+        "min_streaming_hd": 0.2967,
+        "equiv_recherches_google": 0.59
+      }
+    },
+    {
+      "mdl_nom": "qwen-3-8b",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.000202,
+      "co2_g_par_requete": 0.154732,
+      "wh_par_token": 8.915e-05,
+      "nb_conversations": 652,
+      "equivalences": {
+        "min_led_9w": 1.3467,
+        "km_voiture_electrique": 0.00101,
+        "pct_batterie_smartphone": 1.3473,
+        "min_streaming_hd": 0.3367,
+        "equiv_recherches_google": 0.67
+      }
+    },
+    {
+      "mdl_nom": "gpt-5-mini",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000222,
+      "co2_g_par_requete": 0.115884,
+      "wh_par_token": 0.00019772,
+      "nb_conversations": 5016,
+      "equivalences": {
+        "min_led_9w": 1.4801,
+        "km_voiture_electrique": 0.00111,
+        "pct_batterie_smartphone": 1.4807,
+        "min_streaming_hd": 0.3701,
+        "equiv_recherches_google": 0.74
+      }
+    },
+    {
+      "mdl_nom": "qwen3-32b",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.000228,
+      "co2_g_par_requete": 0.174648,
+      "wh_par_token": 0.00011827,
+      "nb_conversations": 2044,
+      "equivalences": {
+        "min_led_9w": 1.5201,
+        "km_voiture_electrique": 0.00114,
+        "pct_batterie_smartphone": 1.5208,
+        "min_streaming_hd": 0.3801,
+        "equiv_recherches_google": 0.76
+      }
+    },
+    {
+      "mdl_nom": "llama-4-scout",
+      "frs_nom": "Meta",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000293,
+      "co2_g_par_requete": 0.152946,
+      "wh_par_token": 0.00040029,
+      "nb_conversations": 16676,
+      "equivalences": {
+        "min_led_9w": 1.9534,
+        "km_voiture_electrique": 0.001465,
+        "pct_batterie_smartphone": 1.9543,
+        "min_streaming_hd": 0.4884,
+        "equiv_recherches_google": 0.98
+      }
+    },
+    {
+      "mdl_nom": "hermes-4-70b",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.000328,
+      "co2_g_par_requete": 0.117096,
+      "wh_par_token": 0.00065753,
+      "nb_conversations": 7054,
+      "equivalences": {
+        "min_led_9w": 2.1868,
+        "km_voiture_electrique": 0.00164,
+        "pct_batterie_smartphone": 2.1878,
+        "min_streaming_hd": 0.5468,
+        "equiv_recherches_google": 1.09
+      }
+    },
+    {
+      "mdl_nom": "olmo-3-32b-think",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.000473,
+      "co2_g_par_requete": 0.168861,
+      "wh_par_token": 0.00011827,
+      "nb_conversations": 1709,
+      "equivalences": {
+        "min_led_9w": 3.1535,
+        "km_voiture_electrique": 0.002365,
+        "pct_batterie_smartphone": 3.1549,
+        "min_streaming_hd": 0.7885,
+        "equiv_recherches_google": 1.58
+      }
+    },
+    {
+      "mdl_nom": "gemini-3.1-flash-lite-preview",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000502,
+      "co2_g_par_requete": 0.262044,
+      "wh_par_token": 0.00087824,
+      "nb_conversations": 6888,
+      "equivalences": {
+        "min_led_9w": 3.3468,
+        "km_voiture_electrique": 0.00251,
+        "pct_batterie_smartphone": 3.3483,
+        "min_streaming_hd": 0.8368,
+        "equiv_recherches_google": 1.67
+      }
+    },
+    {
+      "mdl_nom": "llama-3.1-70b",
+      "frs_nom": "Meta",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000505,
+      "co2_g_par_requete": 0.26361,
+      "wh_par_token": 0.00065753,
+      "nb_conversations": 10825,
+      "equivalences": {
+        "min_led_9w": 3.3668,
+        "km_voiture_electrique": 0.002525,
+        "pct_batterie_smartphone": 3.3683,
+        "min_streaming_hd": 0.8418,
+        "equiv_recherches_google": 1.68
+      }
+    },
+    {
+      "mdl_nom": "qwen3-coder-next",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.000525,
+      "co2_g_par_requete": 0.40215,
+      "wh_par_token": 0.00033234,
+      "nb_conversations": 2953,
+      "equivalences": {
+        "min_led_9w": 3.5002,
+        "km_voiture_electrique": 0.002625,
+        "pct_batterie_smartphone": 3.5017,
+        "min_streaming_hd": 0.8752,
+        "equiv_recherches_google": 1.75
+      }
+    },
+    {
+      "mdl_nom": "llama-3.3-70b",
+      "frs_nom": "Meta",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000549,
+      "co2_g_par_requete": 0.286578,
+      "wh_par_token": 0.00065753,
+      "nb_conversations": 20804,
+      "equivalences": {
+        "min_led_9w": 3.6602,
+        "km_voiture_electrique": 0.002745,
+        "pct_batterie_smartphone": 3.6618,
+        "min_streaming_hd": 0.9152,
+        "equiv_recherches_google": 1.83
+      }
+    },
+    {
+      "mdl_nom": "Apertus-70B-Instruct-2509",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 0.00059,
+      "co2_g_par_requete": 0.046669,
+      "wh_par_token": 0.00065753,
+      "nb_conversations": 7307,
+      "equivalences": {
+        "min_led_9w": 3.9335,
+        "km_voiture_electrique": 0.00295,
+        "pct_batterie_smartphone": 3.9353,
+        "min_streaming_hd": 0.9835,
+        "equiv_recherches_google": 1.97
+      }
+    },
+    {
+      "mdl_nom": "gpt-4.1-mini",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000604,
+      "co2_g_par_requete": 0.315288,
+      "wh_par_token": 0.0006818,
+      "nb_conversations": 18394,
+      "equivalences": {
+        "min_led_9w": 4.0269,
+        "km_voiture_electrique": 0.00302,
+        "pct_batterie_smartphone": 4.0287,
+        "min_streaming_hd": 1.0069,
+        "equiv_recherches_google": 2.01
+      }
+    },
+    {
+      "mdl_nom": "deepseek-r1-distill-llama-70b",
+      "frs_nom": "DeepSeek",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.000617,
+      "co2_g_par_requete": 0.472622,
+      "wh_par_token": 0.00065753,
+      "nb_conversations": 5379,
+      "equivalences": {
+        "min_led_9w": 4.1135,
+        "km_voiture_electrique": 0.003085,
+        "pct_batterie_smartphone": 4.1154,
+        "min_streaming_hd": 1.0285,
+        "equiv_recherches_google": 2.06
+      }
+    },
+    {
+      "mdl_nom": "mixtral-8x22b-instruct-v0.1",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 0.000631,
+      "co2_g_par_requete": 0.049912,
+      "wh_par_token": 0.00106267,
+      "nb_conversations": 9928,
+      "equivalences": {
+        "min_led_9w": 4.2069,
+        "km_voiture_electrique": 0.003155,
+        "pct_batterie_smartphone": 4.2088,
+        "min_streaming_hd": 1.0519,
+        "equiv_recherches_google": 2.1
+      }
+    },
+    {
+      "mdl_nom": "mistral-small-2603",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 0.00066,
+      "co2_g_par_requete": 0.052206,
+      "wh_par_token": 0.0003469,
+      "nb_conversations": 2377,
+      "equivalences": {
+        "min_led_9w": 4.4002,
+        "km_voiture_electrique": 0.0033,
+        "pct_batterie_smartphone": 4.4022,
+        "min_streaming_hd": 1.1002,
+        "equiv_recherches_google": 2.2
+      }
+    },
+    {
+      "mdl_nom": "qwen3.5-35b-a3b",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.0007,
+      "co2_g_par_requete": 0.5362,
+      "wh_par_token": 0.00016617,
+      "nb_conversations": 3201,
+      "equivalences": {
+        "min_led_9w": 4.6669,
+        "km_voiture_electrique": 0.0035,
+        "pct_batterie_smartphone": 4.669,
+        "min_streaming_hd": 1.1669,
+        "equiv_recherches_google": 2.33
+      }
+    },
+    {
+      "mdl_nom": "llama-3.1-nemotron-70b-instruct",
+      "frs_nom": "Meta",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000752,
+      "co2_g_par_requete": 0.392544,
+      "wh_par_token": 0.00065753,
+      "nb_conversations": 14062,
+      "equivalences": {
+        "min_led_9w": 5.0136,
+        "km_voiture_electrique": 0.00376,
+        "pct_batterie_smartphone": 5.0158,
+        "min_streaming_hd": 1.2536,
+        "equiv_recherches_google": 2.51
+      }
+    },
+    {
+      "mdl_nom": "trinity-large-preview",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.000851,
+      "co2_g_par_requete": 0.303807,
+      "wh_par_token": 0.00152351,
+      "nb_conversations": 2943,
+      "equivalences": {
+        "min_led_9w": 5.6736,
+        "km_voiture_electrique": 0.004255,
+        "pct_batterie_smartphone": 5.6762,
+        "min_streaming_hd": 1.4186,
+        "equiv_recherches_google": 2.84
+      }
+    },
+    {
+      "mdl_nom": "command-a",
+      "frs_nom": "Amazon",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000877,
+      "co2_g_par_requete": 0.457794,
+      "wh_par_token": 0.00085652,
+      "nb_conversations": 14605,
+      "equivalences": {
+        "min_led_9w": 5.847,
+        "km_voiture_electrique": 0.004385,
+        "pct_batterie_smartphone": 5.8496,
+        "min_streaming_hd": 1.462,
+        "equiv_recherches_google": 2.92
+      }
+    },
+    {
+      "mdl_nom": "magistral-medium",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 0.000906,
+      "co2_g_par_requete": 0.071665,
+      "wh_par_token": 0.00091477,
+      "nb_conversations": 3488,
+      "equivalences": {
+        "min_led_9w": 6.0403,
+        "km_voiture_electrique": 0.00453,
+        "pct_batterie_smartphone": 6.043,
+        "min_streaming_hd": 1.5103,
+        "equiv_recherches_google": 3.02
+      }
+    },
+    {
+      "mdl_nom": "gpt-oss-120b",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.000943,
+      "co2_g_par_requete": 0.492246,
+      "wh_par_token": 0.00034205,
+      "nb_conversations": 5386,
+      "equivalences": {
+        "min_led_9w": 6.287,
+        "km_voiture_electrique": 0.004715,
+        "pct_batterie_smartphone": 6.2898,
+        "min_streaming_hd": 1.572,
+        "equiv_recherches_google": 3.14
+      }
+    },
+    {
+      "mdl_nom": "nemotron-3-super-120b-a12b",
+      "frs_nom": "Nvidia",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.001037,
+      "co2_g_par_requete": 0.541314,
+      "wh_par_token": 0.00037602,
+      "nb_conversations": 1620,
+      "equivalences": {
+        "min_led_9w": 6.9137,
+        "km_voiture_electrique": 0.005185,
+        "pct_batterie_smartphone": 6.9168,
+        "min_streaming_hd": 1.7287,
+        "equiv_recherches_google": 3.46
+      }
+    },
+    {
+      "mdl_nom": "minimax-m2.5",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.001165,
+      "co2_g_par_requete": 0.415905,
+      "wh_par_token": 0.00073263,
+      "nb_conversations": 2847,
+      "equivalences": {
+        "min_led_9w": 7.7671,
+        "km_voiture_electrique": 0.005825,
+        "pct_batterie_smartphone": 7.7706,
+        "min_streaming_hd": 1.9421,
+        "equiv_recherches_google": 3.88
+      }
+    },
+    {
+      "mdl_nom": "llama-maverick",
+      "frs_nom": "Meta",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.001263,
+      "co2_g_par_requete": 0.659286,
+      "wh_par_token": 0.00160117,
+      "nb_conversations": 9111,
+      "equivalences": {
+        "min_led_9w": 8.4204,
+        "km_voiture_electrique": 0.006315,
+        "pct_batterie_smartphone": 8.4242,
+        "min_streaming_hd": 2.1054,
+        "equiv_recherches_google": 4.21
+      }
+    },
+    {
+      "mdl_nom": "minimax-m2.7",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.001327,
+      "co2_g_par_requete": 0.473739,
+      "wh_par_token": 0.00073263,
+      "nb_conversations": 750,
+      "equivalences": {
+        "min_led_9w": 8.8471,
+        "km_voiture_electrique": 0.006635,
+        "pct_batterie_smartphone": 8.8511,
+        "min_streaming_hd": 2.2121,
+        "equiv_recherches_google": 4.42
+      }
+    },
+    {
+      "mdl_nom": "minimax-m2",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.001359,
+      "co2_g_par_requete": 0.485163,
+      "wh_par_token": 0.00073263,
+      "nb_conversations": 2239,
+      "equivalences": {
+        "min_led_9w": 9.0605,
+        "km_voiture_electrique": 0.006795,
+        "pct_batterie_smartphone": 9.0645,
+        "min_streaming_hd": 2.2655,
+        "equiv_recherches_google": 4.53
+      }
+    },
+    {
+      "mdl_nom": "gpt-5.3",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.001579,
+      "co2_g_par_requete": 0.824238,
+      "wh_par_token": 0.00309605,
+      "nb_conversations": 3300,
+      "equivalences": {
+        "min_led_9w": 10.5272,
+        "km_voiture_electrique": 0.007895,
+        "pct_batterie_smartphone": 10.5319,
+        "min_streaming_hd": 2.6322,
+        "equiv_recherches_google": 5.26
+      }
+    },
+    {
+      "mdl_nom": "mistral-medium-2508",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 0.001715,
+      "co2_g_par_requete": 0.135657,
+      "wh_par_token": 0.00091477,
+      "nb_conversations": 13791,
+      "equivalences": {
+        "min_led_9w": 11.4339,
+        "km_voiture_electrique": 0.008575,
+        "pct_batterie_smartphone": 11.439,
+        "min_streaming_hd": 2.8589,
+        "equiv_recherches_google": 5.72
+      }
+    },
+    {
+      "mdl_nom": "grok-3-mini-beta",
+      "frs_nom": "xAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.001864,
+      "co2_g_par_requete": 0.973008,
+      "wh_par_token": 0.00084912,
+      "nb_conversations": 3753,
+      "equivalences": {
+        "min_led_9w": 12.4273,
+        "km_voiture_electrique": 0.00932,
+        "pct_batterie_smartphone": 12.4329,
+        "min_streaming_hd": 3.1073,
+        "equiv_recherches_google": 6.21
+      }
+    },
+    {
+      "mdl_nom": "Qwen3-Coder-480B-A35B-Instruct",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.00192,
+      "co2_g_par_requete": 1.47072,
+      "wh_par_token": 0.00195062,
+      "nb_conversations": 1823,
+      "equivalences": {
+        "min_led_9w": 12.8006,
+        "km_voiture_electrique": 0.0096,
+        "pct_batterie_smartphone": 12.8064,
+        "min_streaming_hd": 3.2006,
+        "equiv_recherches_google": 6.4
+      }
+    },
+    {
+      "mdl_nom": "claude-3-5-sonnet-v2",
+      "frs_nom": "Anthropic",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.002605,
+      "co2_g_par_requete": 1.35981,
+      "wh_par_token": 0.00393086,
+      "nb_conversations": 11071,
+      "equivalences": {
+        "min_led_9w": 17.3675,
+        "km_voiture_electrique": 0.013025,
+        "pct_batterie_smartphone": 17.3753,
+        "min_streaming_hd": 4.3425,
+        "equiv_recherches_google": 8.68
+      }
+    },
+    {
+      "mdl_nom": "gpt-5",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.002844,
+      "co2_g_par_requete": 1.484568,
+      "wh_par_token": 0.00309605,
+      "nb_conversations": 3497,
+      "equivalences": {
+        "min_led_9w": 18.9609,
+        "km_voiture_electrique": 0.01422,
+        "pct_batterie_smartphone": 18.9695,
+        "min_streaming_hd": 4.7409,
+        "equiv_recherches_google": 9.48
+      }
+    },
+    {
+      "mdl_nom": "gpt-4o-2024-08-06",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.002872,
+      "co2_g_par_requete": 1.499184,
+      "wh_par_token": 0.00393086,
+      "nb_conversations": 10275,
+      "equivalences": {
+        "min_led_9w": 19.1476,
+        "km_voiture_electrique": 0.01436,
+        "pct_batterie_smartphone": 19.1562,
+        "min_streaming_hd": 4.7876,
+        "equiv_recherches_google": 9.57
+      }
+    },
+    {
+      "mdl_nom": "jamba-1.5-large",
+      "frs_nom": "AI21 Labs",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.002976,
+      "co2_g_par_requete": 1.553472,
+      "wh_par_token": 0.00309605,
+      "nb_conversations": 290,
+      "equivalences": {
+        "min_led_9w": 19.841,
+        "km_voiture_electrique": 0.01488,
+        "pct_batterie_smartphone": 19.8499,
+        "min_streaming_hd": 4.961,
+        "equiv_recherches_google": 9.92
+      }
+    },
+    {
+      "mdl_nom": "gpt-5.2",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.003209,
+      "co2_g_par_requete": 1.675098,
+      "wh_par_token": 0.00309605,
+      "nb_conversations": 3735,
+      "equivalences": {
+        "min_led_9w": 21.3944,
+        "km_voiture_electrique": 0.016045,
+        "pct_batterie_smartphone": 21.404,
+        "min_streaming_hd": 5.3494,
+        "equiv_recherches_google": 10.7
+      }
+    },
+    {
+      "mdl_nom": "gpt-5.1",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.003537,
+      "co2_g_par_requete": 1.846314,
+      "wh_par_token": 0.00309605,
+      "nb_conversations": 2180,
+      "equivalences": {
+        "min_led_9w": 23.5812,
+        "km_voiture_electrique": 0.017685,
+        "pct_batterie_smartphone": 23.5918,
+        "min_streaming_hd": 5.8962,
+        "equiv_recherches_google": 11.79
+      }
+    },
+    {
+      "mdl_nom": "kimi-k2",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.003865,
+      "co2_g_par_requete": 1.379805,
+      "wh_par_token": 0.00378476,
+      "nb_conversations": 4751,
+      "equivalences": {
+        "min_led_9w": 25.768,
+        "km_voiture_electrique": 0.019325,
+        "pct_batterie_smartphone": 25.7796,
+        "min_streaming_hd": 6.443,
+        "equiv_recherches_google": 12.88
+      }
+    },
+    {
+      "mdl_nom": "claude-4-sonnet",
+      "frs_nom": "Anthropic",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.003958,
+      "co2_g_par_requete": 2.066076,
+      "wh_par_token": 0.00393086,
+      "nb_conversations": 5466,
+      "equivalences": {
+        "min_led_9w": 26.388,
+        "km_voiture_electrique": 0.01979,
+        "pct_batterie_smartphone": 26.3999,
+        "min_streaming_hd": 6.598,
+        "equiv_recherches_google": 13.19
+      }
+    },
+    {
+      "mdl_nom": "glm-4.6",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.004042,
+      "co2_g_par_requete": 1.442994,
+      "wh_par_token": 0.00189238,
+      "nb_conversations": 1430,
+      "equivalences": {
+        "min_led_9w": 26.948,
+        "km_voiture_electrique": 0.02021,
+        "pct_batterie_smartphone": 26.9601,
+        "min_streaming_hd": 6.738,
+        "equiv_recherches_google": 13.47
+      }
+    },
+    {
+      "mdl_nom": "gemini-3-flash-preview",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.004319,
+      "co2_g_par_requete": 2.254518,
+      "wh_par_token": 0.00393086,
+      "nb_conversations": 6318,
+      "equivalences": {
+        "min_led_9w": 28.7948,
+        "km_voiture_electrique": 0.021595,
+        "pct_batterie_smartphone": 28.8077,
+        "min_streaming_hd": 7.1998,
+        "equiv_recherches_google": 14.4
+      }
+    },
+    {
+      "mdl_nom": "glm-4.5",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.004367,
+      "co2_g_par_requete": 1.559019,
+      "wh_par_token": 0.00189238,
+      "nb_conversations": 1710,
+      "equivalences": {
+        "min_led_9w": 29.1148,
+        "km_voiture_electrique": 0.021835,
+        "pct_batterie_smartphone": 29.1279,
+        "min_streaming_hd": 7.2798,
+        "equiv_recherches_google": 14.56
+      }
+    },
+    {
+      "mdl_nom": "gpt-5.4",
+      "frs_nom": "OpenAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.004411,
+      "co2_g_par_requete": 2.302542,
+      "wh_par_token": 0.00309605,
+      "nb_conversations": 6185,
+      "equivalences": {
+        "min_led_9w": 29.4081,
+        "km_voiture_electrique": 0.022055,
+        "pct_batterie_smartphone": 29.4214,
+        "min_streaming_hd": 7.3531,
+        "equiv_recherches_google": 14.7
+      }
+    },
+    {
+      "mdl_nom": "DeepSeek-V3.2",
+      "frs_nom": "DeepSeek",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.004495,
+      "co2_g_par_requete": 3.44317,
+      "wh_par_token": 0.0039789,
+      "nb_conversations": 6483,
+      "equivalences": {
+        "min_led_9w": 29.9682,
+        "km_voiture_electrique": 0.022475,
+        "pct_batterie_smartphone": 29.9816,
+        "min_streaming_hd": 7.4932,
+        "equiv_recherches_google": 14.98
+      }
+    },
+    {
+      "mdl_nom": "deepseek-v3-chat",
+      "frs_nom": "DeepSeek",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.004565,
+      "co2_g_par_requete": 3.49679,
+      "wh_par_token": 0.0039789,
+      "nb_conversations": 10549,
+      "equivalences": {
+        "min_led_9w": 30.4349,
+        "km_voiture_electrique": 0.022825,
+        "pct_batterie_smartphone": 30.4485,
+        "min_streaming_hd": 7.6099,
+        "equiv_recherches_google": 15.22
+      }
+    },
+    {
+      "mdl_nom": "qwen3-max-2025-09-23",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.004591,
+      "co2_g_par_requete": 3.516706,
+      "wh_par_token": 0.00378476,
+      "nb_conversations": 7745,
+      "equivalences": {
+        "min_led_9w": 30.6082,
+        "km_voiture_electrique": 0.022955,
+        "pct_batterie_smartphone": 30.622,
+        "min_streaming_hd": 7.6532,
+        "equiv_recherches_google": 15.3
+      }
+    },
+    {
+      "mdl_nom": "deepseek-r1",
+      "frs_nom": "DeepSeek",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.004608,
+      "co2_g_par_requete": 3.529728,
+      "wh_par_token": 0.0039789,
+      "nb_conversations": 7809,
+      "equivalences": {
+        "min_led_9w": 30.7215,
+        "km_voiture_electrique": 0.02304,
+        "pct_batterie_smartphone": 30.7354,
+        "min_streaming_hd": 7.6815,
+        "equiv_recherches_google": 15.36
+      }
+    },
+    {
+      "mdl_nom": "deepseek-v3-0324",
+      "frs_nom": "DeepSeek",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.004848,
+      "co2_g_par_requete": 3.713568,
+      "wh_par_token": 0.0039789,
+      "nb_conversations": 11762,
+      "equivalences": {
+        "min_led_9w": 32.3216,
+        "km_voiture_electrique": 0.02424,
+        "pct_batterie_smartphone": 32.3362,
+        "min_streaming_hd": 8.0816,
+        "equiv_recherches_google": 16.16
+      }
+    },
+    {
+      "mdl_nom": "gemini-2.5-flash",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.005275,
+      "co2_g_par_requete": 2.75355,
+      "wh_par_token": 0.00393086,
+      "nb_conversations": 8165,
+      "equivalences": {
+        "min_led_9w": 35.1684,
+        "km_voiture_electrique": 0.026375,
+        "pct_batterie_smartphone": 35.1842,
+        "min_streaming_hd": 8.7934,
+        "equiv_recherches_google": 17.58
+      }
+    },
+    {
+      "mdl_nom": "qwen3.5-397b-a17b",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.005437,
+      "co2_g_par_requete": 4.164742,
+      "wh_par_token": 0.00160117,
+      "nb_conversations": 3022,
+      "equivalences": {
+        "min_led_9w": 36.2485,
+        "km_voiture_electrique": 0.027185,
+        "pct_batterie_smartphone": 36.2648,
+        "min_streaming_hd": 9.0635,
+        "equiv_recherches_google": 18.12
+      }
+    },
+    {
+      "mdl_nom": "deepseek-chat-v3.1",
+      "frs_nom": "DeepSeek",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.005448,
+      "co2_g_par_requete": 4.173168,
+      "wh_par_token": 0.0039789,
+      "nb_conversations": 3782,
+      "equivalences": {
+        "min_led_9w": 36.3218,
+        "km_voiture_electrique": 0.02724,
+        "pct_batterie_smartphone": 36.3382,
+        "min_streaming_hd": 9.0818,
+        "equiv_recherches_google": 18.16
+      }
+    },
+    {
+      "mdl_nom": "glm-4.7",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.005702,
+      "co2_g_par_requete": 2.035614,
+      "wh_par_token": 0.00189238,
+      "nb_conversations": 2883,
+      "equivalences": {
+        "min_led_9w": 38.0152,
+        "km_voiture_electrique": 0.02851,
+        "pct_batterie_smartphone": 38.0323,
+        "min_streaming_hd": 9.5052,
+        "equiv_recherches_google": 19.0
+      }
+    },
+    {
+      "mdl_nom": "hermes-3-llama-3.1-405b",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.00583,
+      "co2_g_par_requete": 2.08131,
+      "wh_par_token": 0.00913384,
+      "nb_conversations": 13540,
+      "equivalences": {
+        "min_led_9w": 38.8686,
+        "km_voiture_electrique": 0.02915,
+        "pct_batterie_smartphone": 38.8861,
+        "min_streaming_hd": 9.7186,
+        "equiv_recherches_google": 19.43
+      }
+    },
+    {
+      "mdl_nom": "gemini-2.0-flash",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.006215,
+      "co2_g_par_requete": 3.24423,
+      "wh_par_token": 0.00393086,
+      "nb_conversations": 17738,
+      "equivalences": {
+        "min_led_9w": 41.4354,
+        "km_voiture_electrique": 0.031075,
+        "pct_batterie_smartphone": 41.4541,
+        "min_streaming_hd": 10.3604,
+        "equiv_recherches_google": 20.71
+      }
+    },
+    {
+      "mdl_nom": "claude-4-5-sonnet",
+      "frs_nom": "Anthropic",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.006591,
+      "co2_g_par_requete": 3.440502,
+      "wh_par_token": 0.00393086,
+      "nb_conversations": 17574,
+      "equivalences": {
+        "min_led_9w": 43.9422,
+        "km_voiture_electrique": 0.032955,
+        "pct_batterie_smartphone": 43.962,
+        "min_streaming_hd": 10.9872,
+        "equiv_recherches_google": 21.97
+      }
+    },
+    {
+      "mdl_nom": "kimi-k2-thinking",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.007017,
+      "co2_g_par_requete": 2.505069,
+      "wh_par_token": 0.00378476,
+      "nb_conversations": 2419,
+      "equivalences": {
+        "min_led_9w": 46.7823,
+        "km_voiture_electrique": 0.035085,
+        "pct_batterie_smartphone": 46.8034,
+        "min_streaming_hd": 11.6973,
+        "equiv_recherches_google": 23.39
+      }
+    },
+    {
+      "mdl_nom": "claude-4-6-sonnet",
+      "frs_nom": "Anthropic",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.007069,
+      "co2_g_par_requete": 3.690018,
+      "wh_par_token": 0.00393086,
+      "nb_conversations": 9114,
+      "equivalences": {
+        "min_led_9w": 47.129,
+        "km_voiture_electrique": 0.035345,
+        "pct_batterie_smartphone": 47.1502,
+        "min_streaming_hd": 11.784,
+        "equiv_recherches_google": 23.56
+      }
+    },
+    {
+      "mdl_nom": "claude-3-7-sonnet",
+      "frs_nom": "Anthropic",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.007292,
+      "co2_g_par_requete": 3.806424,
+      "wh_par_token": 0.00393086,
+      "nb_conversations": 11934,
+      "equivalences": {
+        "min_led_9w": 48.6158,
+        "km_voiture_electrique": 0.03646,
+        "pct_batterie_smartphone": 48.6376,
+        "min_streaming_hd": 12.1558,
+        "equiv_recherches_google": 24.3
+      }
+    },
+    {
+      "mdl_nom": "gemini-3-pro-preview",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.008241,
+      "co2_g_par_requete": 4.301802,
+      "wh_par_token": 0.00428953,
+      "nb_conversations": 2797,
+      "equivalences": {
+        "min_led_9w": 54.9427,
+        "km_voiture_electrique": 0.041205,
+        "pct_batterie_smartphone": 54.9675,
+        "min_streaming_hd": 13.7377,
+        "equiv_recherches_google": 27.47
+      }
+    },
+    {
+      "mdl_nom": "kimi-k2.5",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.008385,
+      "co2_g_par_requete": 2.993445,
+      "wh_par_token": 0.00378476,
+      "nb_conversations": 3074,
+      "equivalences": {
+        "min_led_9w": 55.9028,
+        "km_voiture_electrique": 0.041925,
+        "pct_batterie_smartphone": 55.928,
+        "min_streaming_hd": 13.9778,
+        "equiv_recherches_google": 27.95
+      }
+    },
+    {
+      "mdl_nom": "deepseek-r1-0528",
+      "frs_nom": "DeepSeek",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.00843,
+      "co2_g_par_requete": 6.45738,
+      "wh_par_token": 0.0039789,
+      "nb_conversations": 4261,
+      "equivalences": {
+        "min_led_9w": 56.2028,
+        "km_voiture_electrique": 0.04215,
+        "pct_batterie_smartphone": 56.2281,
+        "min_streaming_hd": 14.0528,
+        "equiv_recherches_google": 28.1
+      }
+    },
+    {
+      "mdl_nom": "gemini-3.1-pro-preview",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.008998,
+      "co2_g_par_requete": 4.696956,
+      "wh_par_token": 0.00428953,
+      "nb_conversations": 6169,
+      "equivalences": {
+        "min_led_9w": 59.9897,
+        "km_voiture_electrique": 0.04499,
+        "pct_batterie_smartphone": 60.0167,
+        "min_streaming_hd": 14.9997,
+        "equiv_recherches_google": 29.99
+      }
+    },
+    {
+      "mdl_nom": "mistral-large-2512",
+      "frs_nom": "Mistral",
+      "pays_datacenter": "France",
+      "kwh_par_requete": 0.009168,
+      "co2_g_par_requete": 0.725189,
+      "wh_par_token": 0.00413421,
+      "nb_conversations": 10765,
+      "equivalences": {
+        "min_led_9w": 61.1231,
+        "km_voiture_electrique": 0.04584,
+        "pct_batterie_smartphone": 61.1506,
+        "min_streaming_hd": 15.2831,
+        "equiv_recherches_google": 30.56
+      }
+    },
+    {
+      "mdl_nom": "llama-3.1-405b",
+      "frs_nom": "Meta",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.009229,
+      "co2_g_par_requete": 4.817538,
+      "wh_par_token": 0.00913384,
+      "nb_conversations": 20169,
+      "equivalences": {
+        "min_led_9w": 61.5297,
+        "km_voiture_electrique": 0.046145,
+        "pct_batterie_smartphone": 61.5574,
+        "min_streaming_hd": 15.3847,
+        "equiv_recherches_google": 30.76
+      }
+    },
+    {
+      "mdl_nom": "gemini-1.5-pro",
+      "frs_nom": "Google",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.009897,
+      "co2_g_par_requete": 5.166234,
+      "wh_par_token": 0.01108446,
+      "nb_conversations": 14485,
+      "equivalences": {
+        "min_led_9w": 65.9833,
+        "km_voiture_electrique": 0.049485,
+        "pct_batterie_smartphone": 66.013,
+        "min_streaming_hd": 16.4983,
+        "equiv_recherches_google": 32.99
+      }
+    },
+    {
+      "mdl_nom": "grok-4.1-fast",
+      "frs_nom": "xAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.011392,
+      "co2_g_par_requete": 5.946624,
+      "wh_par_token": 0.01448094,
+      "nb_conversations": 8738,
+      "equivalences": {
+        "min_led_9w": 75.9505,
+        "km_voiture_electrique": 0.05696,
+        "pct_batterie_smartphone": 75.9846,
+        "min_streaming_hd": 18.9905,
+        "equiv_recherches_google": 37.97
+      }
+    },
+    {
+      "mdl_nom": "glm-5",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.011701,
+      "co2_g_par_requete": 4.177257,
+      "wh_par_token": 0.00409539,
+      "nb_conversations": 2913,
+      "equivalences": {
+        "min_led_9w": 78.0106,
+        "km_voiture_electrique": 0.058505,
+        "pct_batterie_smartphone": 78.0457,
+        "min_streaming_hd": 19.5056,
+        "equiv_recherches_google": 39.0
+      }
+    },
+    {
+      "mdl_nom": "kimi-k2.6",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.011883,
+      "co2_g_par_requete": 4.242231,
+      "wh_par_token": 0.00378476,
+      "nb_conversations": 754,
+      "equivalences": {
+        "min_led_9w": 79.224,
+        "km_voiture_electrique": 0.059415,
+        "pct_batterie_smartphone": 79.2596,
+        "min_streaming_hd": 19.809,
+        "equiv_recherches_google": 39.61
+      }
+    },
+    {
+      "mdl_nom": "glm-5.1",
+      "frs_nom": null,
+      "pays_datacenter": null,
+      "kwh_par_requete": 0.012604,
+      "co2_g_par_requete": 4.499628,
+      "wh_par_token": 0.00409539,
+      "nb_conversations": 744,
+      "equivalences": {
+        "min_led_9w": 84.0309,
+        "km_voiture_electrique": 0.06302,
+        "pct_batterie_smartphone": 84.0687,
+        "min_streaming_hd": 21.0109,
+        "equiv_recherches_google": 42.01
+      }
+    },
+    {
+      "mdl_nom": "grok-4-fast",
+      "frs_nom": "xAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.020997,
+      "co2_g_par_requete": 10.960434,
+      "wh_par_token": 0.01448094,
+      "nb_conversations": 4089,
+      "equivalences": {
+        "min_led_9w": 139.987,
+        "km_voiture_electrique": 0.104985,
+        "pct_batterie_smartphone": 140.05,
+        "min_streaming_hd": 35.002,
+        "equiv_recherches_google": 69.98
+      }
+    },
+    {
+      "mdl_nom": "qwen3.6-plus",
+      "frs_nom": "Alibaba",
+      "pays_datacenter": "Chine",
+      "kwh_par_requete": 0.039766,
+      "co2_g_par_requete": 30.460756,
+      "wh_par_token": 0.01097818,
+      "nb_conversations": 719,
+      "equivalences": {
+        "min_led_9w": 265.1199,
+        "km_voiture_electrique": 0.19883,
+        "pct_batterie_smartphone": 265.2392,
+        "min_streaming_hd": 66.2899,
+        "equiv_recherches_google": 132.54
+      }
+    },
+    {
+      "mdl_nom": "grok-4.20",
+      "frs_nom": "xAI",
+      "pays_datacenter": "États-Unis",
+      "kwh_par_requete": 0.150155,
+      "co2_g_par_requete": 78.38091,
+      "wh_par_token": 0.13710044,
+      "nb_conversations": 909,
+      "equivalences": {
+        "min_led_9w": 1001.0834,
+        "km_voiture_electrique": 0.750775,
+        "pct_batterie_smartphone": 1001.5338,
+        "min_streaming_hd": 250.3084,
+        "equiv_recherches_google": 500.47
+      }
+    }
+  ]
+}
