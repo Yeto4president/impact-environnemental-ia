@@ -15,21 +15,29 @@ export class ImpactTranslatorComponent {
 
   readonly SCALE = 1000;
 
+  // Seuils absolus basés sur la distribution réelle des 112 modèles
+  // Moyenne : 2.24g | max outlier : 78g (grok-4.20)
+  private readonly SEUIL_BAS = 0.5;   // g CO₂
+  private readonly SEUIL_MID = 3.0;   // g CO₂
+  private readonly ECHELLE_MAX = 10;  // g CO₂ — cap visuel
+
   get co2Pct(): number {
     if (!this.equiv) return 0;
-    return Math.min(100, (this.equiv.co2_g_par_requete / this.maxCo2) * 100);
+    return Math.min(100, (this.equiv.co2_g_par_requete / this.ECHELLE_MAX) * 100);
   }
 
   get co2Level(): 'low' | 'mid' | 'high' {
-    if (this.co2Pct < 25) return 'low';
-    if (this.co2Pct < 65) return 'mid';
+    if (!this.equiv) return 'low';
+    const co2 = this.equiv.co2_g_par_requete;
+    if (co2 < this.SEUIL_BAS) return 'low';
+    if (co2 < this.SEUIL_MID) return 'mid';
     return 'high';
   }
 
   get co2Label(): string {
-    if (this.co2Level === 'low') return 'Très faible impact';
-    if (this.co2Level === 'mid') return 'Impact modéré';
-    return 'Impact élevé';
+    if (this.co2Level === 'low') return 'Faible impact (< 0.5 g CO₂)';
+    if (this.co2Level === 'mid') return 'Impact modéré (0.5 – 3 g CO₂)';
+    return 'Impact élevé (> 3 g CO₂)';
   }
 
   get equivalences() {

@@ -12,6 +12,7 @@ import { Modele } from '../../models';
 export class BestChoiceComponent {
   @Input() modele: Modele | null = null;
   @Input() score: number = 0;
+  @Input() totalModeles: number = 0;
 
   get scoreBarres() {
     if (!this.modele) return [];

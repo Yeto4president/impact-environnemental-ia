@@ -4,13 +4,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { ConfigPanelComponent } from './components/config-panel/config-panel.component';
 import { BestChoiceComponent } from './components/best-choice/best-choice.component';
 import { ImpactTranslatorComponent } from './components/impact-translator/impact-translator.component';
+import { EnergyChartComponent } from './components/energy-chart/energy-chart.component';
 import { DataService } from './services/data.service';
 import { UserConfig, ModeleScore, Modele, EquivalenceModele } from './models';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, ConfigPanelComponent, BestChoiceComponent, ImpactTranslatorComponent],
+  imports: [HeaderComponent, ConfigPanelComponent, BestChoiceComponent, ImpactTranslatorComponent, EnergyChartComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -26,6 +27,7 @@ export class App implements OnInit {
   };
 
   ranked: ModeleScore[] = [];
+  modeles: Modele[] = [];
   equivalences: EquivalenceModele[] = [];
   maxCo2 = 0;
 
@@ -41,6 +43,7 @@ export class App implements OnInit {
       modeles: this.data.getModeles(),
       equivData: this.data.getEquivalences(),
     }).subscribe(({ modeles, equivData }) => {
+      this.modeles = modeles;
       this.equivalences = equivData.modeles;
       this.maxCo2 = Math.max(...equivData.modeles.map(e => e.co2_g_par_requete));
       this.ranked = this.data.rankModeles(modeles, this.config);
