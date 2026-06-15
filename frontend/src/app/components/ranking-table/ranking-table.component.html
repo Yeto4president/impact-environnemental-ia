@@ -1,0 +1,77 @@
+<div class="panel">
+
+  <div class="panel-header">
+    <div>
+      <h2 class="panel-title">Classement complet</h2>
+      <p class="panel-subtitle">Selon vos priorités</p>
+    </div>
+    <span class="result-count">{{ filtered.length }} modèles</span>
+  </div>
+
+  <div class="toolbar">
+    <input
+      class="search"
+      [(ngModel)]="search"
+      placeholder="Rechercher un modèle…"
+    />
+    <select [(ngModel)]="filterFournisseur">
+      <option value="">Tous les fournisseurs</option>
+      @for (f of fournisseurs; track f) {
+        <option [value]="f">{{ f }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="th-rank">#</th>
+          <th>Modèle</th>
+          <th>Fournisseur</th>
+          <th class="th-sort th-score" (click)="sort('score')">
+            Score {{ sortIcon('score') }}
+          </th>
+          <th class="th-sort th-simple" (click)="sort('score_eco')">
+            Éco {{ sortIcon('score_eco') }}
+          </th>
+          <th class="th-sort th-simple" (click)="sort('score_perf')">
+            Perf {{ sortIcon('score_perf') }}
+          </th>
+          <th class="th-sort th-simple" (click)="sort('score_prix')">
+            Prix {{ sortIcon('score_prix') }}
+          </th>
+          <th class="th-sort th-conso" (click)="sort('nrg_kwh_moyen')">
+            Conso. {{ sortIcon('nrg_kwh_moyen') }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of filtered; track item.modele.mdl_nom) {
+          <tr
+            [class.tr-selected]="item.modele.mdl_nom === selectedNom"
+            [class.tr-top3]="rankOf(item) <= 3"
+            (click)="selectModele.emit(item)"
+          >
+            <td class="td-rank">{{ medal(rankOf(item)) }}</td>
+            <td class="td-nom">{{ item.modele.mdl_nom }}</td>
+            <td class="td-frs">
+              <span class="frs-chip">{{ item.modele.frs_nom }}</span>
+            </td>
+            <td class="td-score">
+              <div class="mini-bar-wrap">
+                <div class="mini-bar mini-bar--score" [style.width.px]="item.score * 0.36"></div>
+                <span class="mini-val score-val">{{ item.score | number:'1.1-1' }}</span>
+              </div>
+            </td>
+            <td class="td-simple val--eco">{{ (item.modele.score_eco * 100) | number:'1.0-0' }}%</td>
+            <td class="td-simple val--perf">{{ (item.modele.score_perf * 100) | number:'1.0-0' }}%</td>
+            <td class="td-simple val--prix">{{ (item.modele.score_prix * 100) | number:'1.0-0' }}%</td>
+            <td class="td-conso">{{ (item.modele.nrg_kwh_moyen * 1000) | number:'1.3-3' }} Wh</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+</div>

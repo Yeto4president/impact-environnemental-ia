@@ -5,13 +5,14 @@ import { ConfigPanelComponent } from './components/config-panel/config-panel.com
 import { BestChoiceComponent } from './components/best-choice/best-choice.component';
 import { ImpactTranslatorComponent } from './components/impact-translator/impact-translator.component';
 import { EnergyChartComponent } from './components/energy-chart/energy-chart.component';
+import { RankingTableComponent } from './components/ranking-table/ranking-table.component';
 import { DataService } from './services/data.service';
 import { UserConfig, ModeleScore, Modele, EquivalenceModele } from './models';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, ConfigPanelComponent, BestChoiceComponent, ImpactTranslatorComponent, EnergyChartComponent],
+  imports: [HeaderComponent, ConfigPanelComponent, BestChoiceComponent, ImpactTranslatorComponent, EnergyChartComponent, RankingTableComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -55,5 +56,16 @@ export class App implements OnInit {
     this.data.getModeles().subscribe(modeles => {
       this.ranked = this.data.rankModeles(modeles, this.config);
     });
+  }
+
+  onSelectModele(item: ModeleScore) {
+    const idx = this.ranked.findIndex(r => r.modele.mdl_nom === item.modele.mdl_nom);
+    if (idx !== -1) {
+      this.ranked = [
+        this.ranked[idx],
+        ...this.ranked.slice(0, idx),
+        ...this.ranked.slice(idx + 1),
+      ];
+    }
   }
 }

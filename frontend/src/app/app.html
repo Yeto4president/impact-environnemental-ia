@@ -10,6 +10,11 @@
 
     <div class="grid-bottom">
       <app-energy-chart [modeles]="modeles" [bestNom]="bestModele?.mdl_nom ?? ''" />
+      <app-ranking-table
+        [ranked]="ranked"
+        [selectedNom]="bestModele?.mdl_nom ?? ''"
+        (selectModele)="onSelectModele($event)"
+      />
     </div>
   </main>
 
