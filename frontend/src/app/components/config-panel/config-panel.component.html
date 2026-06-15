@@ -1,0 +1,45 @@
+<div class="panel">
+
+  <div class="panel-header">
+    <h2 class="panel-title">Vos priorités</h2>
+    <span class="panel-sub">Personnalisez le classement</span>
+  </div>
+
+  <div class="field">
+    <label for="tache">Cas d'usage</label>
+    <select id="tache" [(ngModel)]="config.tache" (ngModelChange)="emit()">
+      @for (t of taches; track t.id) {
+        <option [value]="t.id">{{ t.label }}</option>
+      }
+    </select>
+    <span class="field-hint">
+      @for (t of taches; track t.id) {
+        @if (t.id === config.tache) { {{ t.description }} }
+      }
+    </span>
+  </div>
+
+  <div class="sliders">
+    @for (s of sliders; track s.key) {
+      <div class="slider-item">
+        <div class="slider-header">
+          <span class="slider-dot" [style.background]="s.color"></span>
+          <span class="slider-label">{{ s.label }}</span>
+          <span class="tooltip-wrap">
+            <span class="info-icon">ℹ</span>
+            <span class="tooltip-text">{{ s.info }}</span>
+          </span>
+          <span class="slider-value" [style.color]="s.color">{{ getValue(s.key) }}</span>
+        </div>
+        <input
+          type="range"
+          min="0" max="100"
+          [value]="getValue(s.key)"
+          (input)="setValue(s.key, $any($event.target).value)"
+          [style.accent-color]="s.color"
+        />
+      </div>
+    }
+  </div>
+
+</div>

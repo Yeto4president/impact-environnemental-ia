@@ -77,12 +77,14 @@ export interface DetecteurGaspillage {
   score_frugalite: number;
 }
 
+export type TacheId = 'gpqa' | 'image-chat' | 'lm-arena-chat' | 'sourcegraph-fim' | 'toutes';
+
 export interface UserConfig {
-  profil: string;
-  casUsage: string;
+  tache: TacheId;
   poidsEco: number;
   poidsPerf: number;
   poidsPrix: number;
+  poidsTransparence: number;
 }
 
 export interface ModeleScore {

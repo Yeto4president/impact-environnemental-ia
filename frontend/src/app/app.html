@@ -3,6 +3,8 @@
 
   <main class="main-layout">
     <div class="grid-top">
+      <app-config-panel (configChange)="onConfigChange($event)" />
+      <app-best-choice [modele]="bestModele" [score]="bestScore" />
     </div>
 
     <div class="grid-bottom">

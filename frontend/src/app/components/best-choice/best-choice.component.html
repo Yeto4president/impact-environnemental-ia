@@ -1,0 +1,69 @@
+@if (modele) {
+  <div class="card">
+
+    <div class="card-header">
+      <div class="crown-badge">Meilleur choix</div>
+      <div class="score-global">
+        <span class="score-val">{{ score | number:'1.1-1' }}</span>
+        <span class="score-max">/100</span>
+      </div>
+    </div>
+
+    <div class="model-identity">
+      <h3 class="model-name">{{ modele.mdl_nom }}</h3>
+      <div class="model-meta">
+        <span class="chip chip--blue">{{ modele.frs_nom }}</span>
+        <span class="chip chip--gray">{{ modele.frs_pays_datacenter }}</span>
+        <span class="chip chip--gray">{{ modele.nrg_nb_conversations | number }} conversations</span>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi">
+        <span class="kpi-label">Conso. réelle</span>
+        <span class="kpi-value kpi--green">{{ (modele.nrg_kwh_moyen * 1000) | number:'1.4-4' }} Wh</span>
+        <span class="kpi-sub">par requête</span>
+        <span class="kpi-elec">≈ {{ coutElec1000requetes | number:'1.4-4' }} € / 1 000 requêtes</span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-label">CO₂ datacenter</span>
+        <span class="kpi-value kpi--yellow">{{ modele.frs_co2_datacenter | number:'1.3-3' }}</span>
+        <span class="kpi-sub">kg CO₂/kWh</span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-label">Satisfaction</span>
+        <span class="kpi-value kpi--blue">{{ (modele.qlt_taux_satisfaction * 100) | number:'1.0-0' }}%</span>
+        <span class="kpi-sub">des utilisateurs ont préféré ce modèle lors de tests en aveugle</span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-label">Prix input</span>
+        <span class="kpi-value kpi--purple">{{ modele.trf_input_1k | number:'1.5-5' }} $</span>
+        <span class="kpi-sub">/ 1 000 tokens</span>
+        <span class="kpi-elec">≈ 750 mots envoyés</span>
+      </div>
+    </div>
+
+    <div class="scores">
+      @for (b of scoreBarres; track b.label) {
+        <div class="score-row">
+          <div class="score-label-wrap">
+            <span class="score-label">{{ b.label }}</span>
+            <span class="tooltip-wrap">
+              <span class="info-icon">ℹ</span>
+              <span class="tooltip-text">{{ b.hint }}</span>
+            </span>
+          </div>
+          <div class="score-track">
+            <div class="score-fill" [style.width.%]="b.value * 100" [style.background]="b.color"></div>
+          </div>
+          <span class="score-pct" [style.color]="b.color">{{ (b.value * 100) | number:'1.0-0' }}%</span>
+        </div>
+      }
+    </div>
+
+  </div>
+} @else {
+  <div class="card card--empty">
+    <p>Chargement…</p>
+  </div>
+}
