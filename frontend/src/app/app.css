@@ -1,0 +1,45 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-layout {
+  flex: 1;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.grid-top {
+  display: grid;
+  grid-template-columns: 300px 1fr 280px;
+  gap: 1.5rem;
+}
+
+.grid-bottom {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.73rem;
+  color: #334155;
+  border-top: 1px solid #1e293b;
+}
+
+@media (max-width: 1100px) {
+  .grid-top { grid-template-columns: 1fr 1fr; }
+  .grid-bottom { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .grid-top { grid-template-columns: 1fr; }
+}
