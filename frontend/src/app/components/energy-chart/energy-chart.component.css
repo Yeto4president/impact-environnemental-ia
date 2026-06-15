@@ -24,8 +24,21 @@
 }
 
 .panel-sub {
+  margin: 0.15rem 0 0;
   font-size: 0.75rem;
   color: #64748b;
+}
+
+.rank-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  align-self: flex-start;
 }
 
 /* Barres */
@@ -33,9 +46,13 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  max-height: 480px;
-  overflow-y: auto;
+  overflow: hidden;
   padding-right: 0.4rem;
+}
+
+.chart-scroll--full {
+  max-height: 460px;
+  overflow-y: auto;
 }
 
 .bar-row {
@@ -129,12 +146,36 @@
   color: #475569;
 }
 
-/* Légende */
+/* Footer */
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #334155;
+}
+
 .legend {
   display: flex;
   gap: 1.5rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid #1e293b;
+}
+
+.toggle-btn {
+  background: none;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.toggle-btn:hover {
+  border-color: #22c55e;
+  color: #22c55e;
 }
 
 .legend-item {
@@ -155,8 +196,3 @@
 .dot--best  { background: #22c55e; }
 .dot--other { background: #334155; }
 
-.legend-count {
-  margin-left: auto;
-  font-size: 0.72rem;
-  color: #475569;
-}

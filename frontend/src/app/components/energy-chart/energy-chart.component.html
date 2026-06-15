@@ -1,11 +1,16 @@
 <div class="panel">
 
   <div class="panel-header">
-    <h2 class="panel-title">Consommation énergétique</h2>
-    <span class="panel-sub">Wh par requête · du plus sobre au plus gourmand</span>
+    <div>
+      <h2 class="panel-title">Consommation énergétique</h2>
+      <p class="panel-sub">Wh par requête · du plus sobre au plus gourmand</p>
+    </div>
+    @if (!showAll && bestRank > 0) {
+      <span class="rank-badge">{{ bestRank }}e / {{ allBars.length }}</span>
+    }
   </div>
 
-  <div class="chart-scroll">
+  <div class="chart-scroll" [class.chart-scroll--full]="showAll">
     @for (b of bars; track b.nom) {
       <div class="bar-row" [class.best]="b.isBest">
 
@@ -34,10 +39,14 @@
     }
   </div>
 
-  <div class="legend">
-    <span class="legend-item"><span class="dot dot--best"></span> Votre meilleur choix</span>
-    <span class="legend-item"><span class="dot dot--other"></span> Autres modèles</span>
-    <span class="legend-count">{{ bars.length }} modèles</span>
+  <div class="footer-row">
+    <div class="legend">
+      <span class="legend-item"><span class="dot dot--best"></span> Votre meilleur choix</span>
+      <span class="legend-item"><span class="dot dot--other"></span> Autres modèles</span>
+    </div>
+    <button class="toggle-btn" (click)="showAll = !showAll">
+      {{ showAll ? 'Réduire' : 'Voir les ' + allBars.length + ' modèles' }}
+    </button>
   </div>
 
 </div>
