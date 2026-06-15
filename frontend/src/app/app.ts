@@ -43,11 +43,14 @@ export class App implements OnInit {
     forkJoin({
       modeles: this.data.getModeles(),
       equivData: this.data.getEquivalences(),
-    }).subscribe(({ modeles, equivData }) => {
-      this.modeles = modeles;
-      this.equivalences = equivData.modeles;
-      this.maxCo2 = Math.max(...equivData.modeles.map(e => e.co2_g_par_requete));
-      this.ranked = this.data.rankModeles(modeles, this.config);
+    }).subscribe({
+      next: ({ modeles, equivData }) => {
+        this.modeles = modeles;
+        this.equivalences = equivData.modeles;
+        this.maxCo2 = Math.max(...equivData.modeles.map(e => e.co2_g_par_requete ?? 0));
+        this.ranked = this.data.rankModeles(modeles, this.config);
+      },
+      error: (err) => console.error('Erreur de chargement des données', err)
     });
   }
 

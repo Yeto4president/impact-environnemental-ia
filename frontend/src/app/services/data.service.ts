@@ -26,10 +26,10 @@ export class DataService {
     const total = config.poidsEco + config.poidsPerf + config.poidsPrix + config.poidsTransparence;
     if (total === 0) return 0;
     return (
-      modele.score_eco          * (config.poidsEco          / total) +
-      modele.score_perf         * (config.poidsPerf         / total) +
-      modele.score_prix         * (config.poidsPrix         / total) +
-      modele.score_transparence * (config.poidsTransparence / total)
+      (modele.score_eco          ?? 0) * (config.poidsEco          / total) +
+      (modele.score_perf         ?? 0) * (config.poidsPerf         / total) +
+      (modele.score_prix         ?? 0) * (config.poidsPrix         / total) +
+      (modele.score_transparence ?? 0) * (config.poidsTransparence / total)
     ) * 100;
   }
 
