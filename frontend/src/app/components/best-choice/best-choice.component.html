@@ -43,22 +43,31 @@
       </div>
     </div>
 
-    <div class="scores">
-      @for (b of scoreBarres; track b.label) {
-        <div class="score-row">
-          <div class="score-label-wrap">
-            <span class="score-label">{{ b.label }}</span>
-            <span class="tooltip-wrap">
-              <span class="info-icon">ℹ</span>
-              <span class="tooltip-text">{{ b.hint }}</span>
+    <div class="reason-box">
+      <div class="reason-box__header">
+        <span class="reason-box__tag">Pourquoi ce modèle ?</span>
+        <span class="reason-box__score">Score global : {{ score | number:'1.1-1' }}/100</span>
+      </div>
+
+      <p class="reason-box__lead">{{ summaryReason }}</p>
+      <p class="reason-box__note">{{ comparisonText }}</p>
+
+      <div class="reason-details reason-details--scores">
+        @for (scoreItem of scoreBreakdown; track scoreItem.label) {
+          <div class="reason-detail reason-detail--score">
+            <span class="reason-icon" [style.borderColor]="scoreItem.color" [style.color]="scoreItem.color">
+              {{ scoreItem.icon }}
             </span>
+            <div class="reason-detail__text">
+              <div class="reason-detail__heading">
+                <strong>{{ scoreItem.label }}</strong>
+                <span class="reason-detail__value" [style.color]="scoreItem.color">{{ scoreItem.valueText }}</span>
+              </div>
+              <span>{{ scoreItem.description }}</span>
+            </div>
           </div>
-          <div class="score-track">
-            <div class="score-fill" [style.width.%]="b.value * 100" [style.background]="b.color"></div>
-          </div>
-          <span class="score-pct" [style.color]="b.color">{{ (b.value * 100) | number:'1.0-0' }}%</span>
-        </div>
-      }
+        }
+      </div>
     </div>
 
   </div>
